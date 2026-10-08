@@ -8,6 +8,7 @@ import {
   Code2, 
   Layers, 
   Mail, 
+  Briefcase,
   Check
 } from "lucide-react";
 import { GithubIcon } from "./icons";
@@ -89,11 +90,11 @@ export function Hero() {
         </Link>
 
         <Link
-          href="/codecrafters"
+          href="/experience"
           className="px-5 py-2.5 rounded-xl border border-border/80 bg-secondary/50 hover:bg-secondary text-foreground font-medium text-sm transition-all flex items-center gap-2"
         >
-          <Layers className="w-4 h-4 text-indigo-400" />
-          <span>CodeCrafters Journey</span>
+          <Briefcase className="w-4 h-4 text-emerald-400" />
+          <span>Experience</span>
         </Link>
       </motion.div>
 

@@ -45,6 +45,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/experience" className="hover:text-foreground transition-colors">
+                  Experience
+                </Link>
+              </li>
+              <li>
                 <Link href="/dsa" className="hover:text-foreground transition-colors">
                   DSA Tracker
                 </Link>

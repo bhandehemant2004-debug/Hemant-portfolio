@@ -13,6 +13,7 @@ import {
   User, 
   Code2, 
   Layers, 
+  Briefcase, 
   ExternalLink 
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons";
@@ -22,6 +23,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { name: "Home", href: "/", icon: Terminal },
   { name: "Projects", href: "/projects", icon: FileCode2 },
+  { name: "Experience", href: "/experience", icon: Briefcase },
   { name: "DSA Tracker", href: "/dsa", icon: Code2 },
   { name: "CodeCrafters", href: "/codecrafters", icon: Layers },
   { name: "Blog", href: "/blog", icon: BookOpen },
