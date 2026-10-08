@@ -5,9 +5,10 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
   ExternalLink, 
-  Star, 
   ArrowRight, 
-  Cpu 
+  Cpu, 
+  CheckCircle2,
+  FolderGit2
 } from "lucide-react";
 import { GithubIcon } from "./icons";
 import { FEATURED_PROJECTS } from "@/data/projects";
@@ -20,13 +21,13 @@ export function FeaturedProjects() {
         <div>
           <div className="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 uppercase tracking-wider mb-2">
             <Cpu className="w-3.5 h-3.5" />
-            <span>Core Engineering</span>
+            <span>Featured Engineering</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground">
-            Featured Systems Projects
+            Core Projects
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-xl">
-            Flagship distributed systems, databases, and low-level tools built from scratch.
+            Key systems projects in Go, Java, Spring Boot, Redis Streams, and TCP Sockets.
           </p>
         </div>
 
@@ -39,7 +40,7 @@ export function FeaturedProjects() {
         </Link>
       </div>
 
-      {/* Grid of 3 Featured Projects */}
+      {/* Grid of 3 Projects */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {FEATURED_PROJECTS.map((project, idx) => (
           <motion.div
@@ -50,15 +51,14 @@ export function FeaturedProjects() {
             transition={{ duration: 0.4, delay: idx * 0.1 }}
             className="flex flex-col rounded-2xl border border-border/60 bg-secondary/20 hover:border-border hover:bg-secondary/35 transition-all p-6 group relative backdrop-blur-sm"
           >
-            {/* Top row: Category & Stars */}
+            {/* Top row: Category */}
             <div className="flex items-center justify-between gap-2 mb-4">
               <span className="text-[11px] font-mono px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium">
                 {project.category}
               </span>
-              <div className="flex items-center gap-1 text-xs text-muted-foreground font-mono">
-                <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
-                <span>{project.stars || 10}</span>
-              </div>
+              <span className="text-[11px] font-mono text-muted-foreground">
+                {project.tagline.split(",")[0]}
+              </span>
             </div>
 
             {/* Title & Tagline */}
@@ -74,23 +74,19 @@ export function FeaturedProjects() {
               {project.description}
             </p>
 
-            {/* Metrics pills */}
-            <div className="grid grid-cols-3 gap-2 my-4 pt-4 border-t border-border/30">
-              {project.metrics.map((m, mIdx) => (
-                <div key={mIdx} className="rounded-lg bg-background/50 border border-border/40 p-2 text-center">
-                  <span className="block text-[10px] text-muted-foreground uppercase font-mono truncate">
-                    {m.label}
-                  </span>
-                  <span className="text-xs font-semibold text-foreground truncate block">
-                    {m.value}
-                  </span>
+            {/* Key Deliverables Points from Resume */}
+            <div className="space-y-2 my-4 pt-4 border-t border-border/30">
+              {project.architecturePoints.slice(0, 2).map((point, pIdx) => (
+                <div key={pIdx} className="flex items-start gap-2 text-xs text-zinc-300">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                  <span className="leading-relaxed line-clamp-2">{point}</span>
                 </div>
               ))}
             </div>
 
             {/* Tech stack badges */}
             <div className="flex flex-wrap gap-1.5 my-3">
-              {project.techStack.slice(0, 4).map((tech) => (
+              {project.techStack.map((tech) => (
                 <span
                   key={tech}
                   className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-secondary border border-border/50 text-foreground"
@@ -98,11 +94,6 @@ export function FeaturedProjects() {
                   {tech}
                 </span>
               ))}
-              {project.techStack.length > 4 && (
-                <span className="text-[10px] font-mono px-1.5 py-0.5 rounded-md text-muted-foreground">
-                  +{project.techStack.length - 4}
-                </span>
-              )}
             </div>
 
             {/* Links */}
@@ -118,7 +109,7 @@ export function FeaturedProjects() {
               </a>
 
               <Link
-                href={`/projects`}
+                href="/projects"
                 className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1 transition-colors"
               >
                 <span>Details</span>

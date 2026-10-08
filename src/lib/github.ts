@@ -334,57 +334,28 @@ export async function fetchGitHubContributions(
 function generateFallbackContributions(): GitHubContributionData {
   const weeks: ContributionWeek[] = [];
   const today = new Date();
-  let totalContributions = 0;
 
   // 52 weeks back
   const startDate = new Date(today);
   startDate.setDate(today.getDate() - 52 * 7 + (7 - today.getDay()));
-
-  const colors = [
-    "transparent",
-    "#0e4429",
-    "#006d32",
-    "#26a641",
-    "#39d353",
-  ];
 
   for (let w = 0; w < 52; w++) {
     const days: ContributionDay[] = [];
     for (let d = 0; d < 7; d++) {
       const currentDate = new Date(startDate);
       currentDate.setDate(startDate.getDate() + (w * 7 + d));
-      
-      // Determine day pattern: high activity on weekdays, bursts on weekends
-      const dayOfWeek = currentDate.getDay();
-      const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
-      const seed = Math.sin(w * 13 + d * 7) * 10000;
-      const rand = seed - Math.floor(seed);
-
-      let count = 0;
-      if (rand > 0.45) {
-        count = Math.floor(rand * 6) + 1;
-        if (isWeekend && rand > 0.7) count += 3;
-      }
-      totalContributions += count;
-
-      let colorIndex = 0;
-      if (count === 0) colorIndex = 0;
-      else if (count <= 2) colorIndex = 1;
-      else if (count <= 4) colorIndex = 2;
-      else if (count <= 7) colorIndex = 3;
-      else colorIndex = 4;
 
       days.push({
         date: currentDate.toISOString().split("T")[0],
-        contributionCount: count,
-        color: colors[colorIndex],
+        contributionCount: 0,
+        color: "transparent",
       });
     }
     weeks.push({ contributionDays: days });
   }
 
   return {
-    totalContributions: Math.max(totalContributions, 218),
+    totalContributions: 0,
     weeks,
   };
 }

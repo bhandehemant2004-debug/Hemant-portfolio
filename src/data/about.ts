@@ -1,3 +1,12 @@
+export interface EducationItem {
+  degree: string;
+  institution: string;
+  period: string;
+  score: string;
+  boardOrExam?: string;
+  details?: string[];
+}
+
 export interface TimelineItem {
   year: string;
   period: string;
@@ -11,68 +20,57 @@ export interface TimelineItem {
 
 export interface SkillCategory {
   category: string;
-  skills: { name: string; level?: string; icon?: string }[];
+  skills: { name: string }[];
 }
 
-export const TIMELINE_EVENTS: TimelineItem[] = [
+export const PERSONAL_INFO = {
+  name: "Hemant Bhande",
+  role: "Undergraduate (2023 – 2027) • B.Tech IT",
+  email: "bhandehemant2004@gmail.com",
+  phone: "+91 9284732641",
+  github: "https://github.com/bhandehemant2004-debug",
+  linkedin: "https://linkedin.com",
+  leetcode: "https://leetcode.com",
+  codeforces: "https://codeforces.com",
+  gfg: "https://geeksforgeeks.org",
+  summary:
+    "Developer and curious problem solver who enjoys understanding how systems work from the inside. Punctual, hardworking, and driven to learn by building. Experienced in backend development, distributed systems, concurrency, and full-stack web applications, supported by a strong foundation in data structures and algorithms.",
+};
+
+export const EDUCATION_DATA: EducationItem[] = [
   {
-    year: "2026",
-    period: "Present (Final Year)",
-    title: "Final Year Undergraduate & Systems Specialization",
-    role: "B.Tech Computer Science and Engineering",
-    description:
-      "Deepening focus on distributed systems, database internals, and high-concurrency architectures. Actively building projects from scratch using CodeCrafters and preparing for full-time software engineering roles.",
-    highlights: [
-      "Built production-grade Redis clone in Go with full RESP2/RESP3 protocol & RDB persistence",
-      "Reached 480+ problems solved on LeetCode and Specialist rating on Codeforces",
-      "Developed high-throughput Distributed Job Scheduler in Java with Raft leader election",
-      "Open to Full-Time Software Engineer / Backend Engineer opportunities starting 2025/2026",
+    degree: "B.Tech in Information Technology",
+    institution: "Shri Guru Gobind Singhji Institute of Engineering and Technology, Nanded",
+    period: "2023 – Expected May 2027",
+    score: "CGPA: 8.29",
+    details: [
+      "Core Coursework: Data Structures & Algorithms, Operating Systems, Computer Networks, Database Management Systems, Object-Oriented Programming, System Design.",
     ],
-    tags: ["Distributed Systems", "Go", "Java", "Raft", "Database Internals"],
   },
   {
-    year: "2025",
-    period: "Junior Year",
-    title: "Distributed Storage, Security & Low-Level Design",
-    role: "Core Developer & Systems Explorer",
-    description:
-      "Focused heavily on system architecture, design patterns, and network programming. Explored cryptographic storage and container virtualization primitives.",
-    highlights: [
-      "Engineered TrustFs: a peer-to-peer chunked encrypted file system with AES-256 and SHA-256 deduplication",
-      "Authored clean solutions for real-world Low-Level Design (LLD) problems: Rate Limiters, Distributed Caches, Cinema Booking",
-      "Built custom POSIX shell 'jsh' in Java with stream pipelines and file descriptor redirection",
-      "Implemented JWT authentication service in Go with RS256 token rotation and Redis blacklist",
+    degree: "Competitive Entrance Exams",
+    institution: "National & State Level Engineering Examinations",
+    period: "2023",
+    score: "MHT-CET: 96 %ile | JEE Mains: 93 %ile",
+    boardOrExam: "MHT-CET & JEE Mains 2023",
+    details: [
+      "MHT-CET 2023: 96 Percentile",
+      "JEE Mains 2023: 93 Percentile",
     ],
-    tags: ["TrustFs", "LLD", "Design Patterns", "NIO", "AES-256"],
   },
   {
-    year: "2024",
-    period: "Sophomore Year",
-    title: "Operating Systems, Computer Networks & Competitive Coding",
-    role: "Computer Science Undergraduate",
-    description:
-      "Mastered low-level operating system concepts, process synchronization, socket programming, and competitive programming on Codeforces and LeetCode.",
-    highlights: [
-      "Competed actively in weekly Codeforces contests, climbing to 1600+ peak rating",
-      "Built multithreaded chat server using non-blocking TCP sockets",
-      "Explored Linux kernel namespaces and cgroups container runtime internals",
-      "Studied ACID database transactions, indexing mechanisms, and relational query plans",
-    ],
-    tags: ["Codeforces", "Operating Systems", "Networking", "TCP/IP", "C++"],
+    degree: "Higher Secondary (Class XII - PCM)",
+    institution: "Shivaji Mahavidyalaya, Udgir",
+    period: "2020 – 2022",
+    score: "80.67%",
+    boardOrExam: "Maharashtra State Board",
   },
   {
-    year: "2023",
-    period: "Freshman Year",
-    title: "Data Structures, Algorithms & Software Foundations",
-    role: "CS Undergraduate",
-    description:
-      "Built foundational intuition for algorithmic complexity, memory management, pointers, and object-oriented design in Java and C++.",
-    highlights: [
-      "Solved 200+ foundational algorithmic problems across arrays, trees, dynamic programming, and graphs",
-      "Transitioned development environment entirely to Linux and command line workflows",
-      "Contributed to student developer clubs and open-source hackathons",
-    ],
-    tags: ["Algorithms", "Data Structures", "OOP", "Linux", "Java"],
+    degree: "Secondary Education (Class X)",
+    institution: "Podar International School",
+    period: "2020",
+    score: "93%",
+    boardOrExam: "CBSE Board",
   },
 ];
 
@@ -80,43 +78,56 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     category: "Languages",
     skills: [
+      { name: "Java" },
       { name: "Go (Golang)" },
-      { name: "Java (21+)" },
-      { name: "TypeScript" },
-      { name: "C / C++" },
-      { name: "SQL" },
-      { name: "Python" },
+      { name: "C++" },
+      { name: "C" },
     ],
   },
   {
-    category: "Systems & Backend",
+    category: "Backend & Frameworks",
     skills: [
-      { name: "Distributed Systems" },
-      { name: "Raft Consensus" },
-      { name: "Low-Level Design (LLD)" },
-      { name: "High-Concurrency / Multi-threading" },
-      { name: "TCP / UDP Socket Programming" },
-      { name: "RESTful APIs & Microservices" },
+      { name: "Spring Boot" },
+      { name: "Spring Security" },
+      { name: "Spring Data JPA" },
+      { name: "Django" },
+      { name: "REST APIs" },
     ],
   },
   {
-    category: "Databases & Storage",
+    category: "Databases & Messaging",
     skills: [
-      { name: "Redis (RESP Internals)" },
       { name: "PostgreSQL" },
+      { name: "MySQL" },
+      { name: "MongoDB" },
+      { name: "Redis (Streams, Pub/Sub)" },
       { name: "SQLite" },
-      { name: "Content-Addressed Storage" },
-      { name: "In-Memory Caches" },
     ],
   },
   {
-    category: "Infrastructure & DevOps",
+    category: "Frontend",
     skills: [
-      { name: "Docker & Linux Namespaces" },
-      { name: "Linux / POSIX Systems" },
-      { name: "Git & Version Control" },
-      { name: "CI / CD Pipelines" },
-      { name: "Vercel & Next.js" },
+      { name: "React" },
+      { name: "JavaFX" },
     ],
   },
+  {
+    category: "Tools & Concepts",
+    skills: [
+      { name: "Docker & Docker Compose" },
+      { name: "Git" },
+      { name: "JWT" },
+      { name: "Multithreading & Concurrency" },
+      { name: "Distributed Systems" },
+      { name: "Socket Programming" },
+      { name: "JUnit & Mockito" },
+      { name: "Linux / Unix" },
+    ],
+  },
+];
+
+export const ACHIEVEMENTS = [
+  "Solved 700+ Data Structures & Algorithms and competitive programming problems across LeetCode, GeeksforGeeks, and Codeforces.",
+  "MHT-CET 2023: 96 Percentile | JEE Mains 2023: 93 Percentile",
+  "Class 10th CBSE: 93% at Podar International School",
 ];
