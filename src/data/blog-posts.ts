@@ -25,7 +25,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: {
       name: "Hemant",
       avatar: "https://avatars.githubusercontent.com/u/252012804?v=4",
-      role: "Final Year Undergraduate • Systems Enthusiast",
+      role: "B.Tech IT (2027) • SGGS IE&T Nanded",
     },
     content: `## Why Rebuild Redis?
 
@@ -110,7 +110,7 @@ Building this gave me unprecedented intuition for low-level protocol engineering
     author: {
       name: "Hemant",
       avatar: "https://avatars.githubusercontent.com/u/252012804?v=4",
-      role: "Final Year Undergraduate • Systems Enthusiast",
+      role: "B.Tech IT (2027) • SGGS IE&T Nanded",
     },
     content: `## The Problem: Scheduling at Scale
 
@@ -181,7 +181,7 @@ This ensures zero lost tasks, even during catastrophic worker crashes.`,
     author: {
       name: "Hemant",
       avatar: "https://avatars.githubusercontent.com/u/252012804?v=4",
-      role: "Final Year Undergraduate • Systems Enthusiast",
+      role: "B.Tech IT (2027) • SGGS IE&T Nanded",
     },
     content: `## A Shell in Java?
 
@@ -237,7 +237,7 @@ The result is a fast, responsive shell capable of compiling programs, executing 
     author: {
       name: "Hemant",
       avatar: "https://avatars.githubusercontent.com/u/252012804?v=4",
-      role: "Final Year Undergraduate • Systems Enthusiast",
+      role: "B.Tech IT (2027) • SGGS IE&T Nanded",
     },
     content: `## The Evolution of Asynchronous I/O
 
@@ -285,7 +285,7 @@ Both languages have mastered high-throughput I/O. Go provides cleaner primitives
     author: {
       name: "Hemant",
       avatar: "https://avatars.githubusercontent.com/u/252012804?v=4",
-      role: "Final Year Undergraduate • Systems Enthusiast",
+      role: "B.Tech IT (2027) • SGGS IE&T Nanded",
     },
     content: `## Beyond Random Problem Solving
 

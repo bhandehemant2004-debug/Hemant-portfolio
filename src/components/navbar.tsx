@@ -68,7 +68,7 @@ export function Navbar() {
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" title="Available for opportunities" />
             </span>
             <span className="text-[11px] font-mono text-muted-foreground hidden sm:inline-block">
-              final year cs
+              B.Tech IT • 2027
             </span>
           </div>
         </Link>

@@ -16,19 +16,19 @@ export function Footer() {
           {/* Brand bio */}
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2">
-              <span className="font-mono font-bold text-lg text-foreground">Hemant</span>
+              <span className="font-mono font-bold text-lg text-foreground">Hemant Bhande</span>
               <span className="text-xs px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-mono">
-                graduating 2025/2026
+                B.Tech IT • Graduating 2027
               </span>
             </div>
             <p className="text-sm text-muted-foreground max-w-sm leading-relaxed">
-              Final year undergraduate software engineer passionate about distributed systems, 
-              low-level performance, backend architecture, and problem solving.
+              Undergraduate Information Technology student at SGGS IE&T Nanded passionate about backend systems, 
+              distributed architecture, concurrency, and competitive programming.
             </p>
             <div className="flex items-center gap-2 pt-1">
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
               <span className="text-xs text-muted-foreground">
-                Seeking Full-Time Software Engineering & Backend Roles
+                B.Tech IT (2023 – 2027) • Open for Opportunities
               </span>
             </div>
           </div>
