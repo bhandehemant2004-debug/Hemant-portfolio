@@ -14,6 +14,7 @@ import {
   Code2, 
   Layers, 
   Briefcase, 
+  GitCommit,
   ExternalLink 
 } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "./icons";
@@ -23,6 +24,7 @@ import { cn } from "@/lib/utils";
 const NAV_ITEMS = [
   { name: "Home", href: "/", icon: Terminal },
   { name: "Projects", href: "/projects", icon: FileCode2 },
+  { name: "Contributions", href: "/contributions", icon: GitCommit },
   { name: "Experience", href: "/experience", icon: Briefcase },
   { name: "DSA Tracker", href: "/dsa", icon: Code2 },
   { name: "CodeCrafters", href: "/codecrafters", icon: Layers },
