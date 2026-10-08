@@ -1,0 +1,148 @@
+export interface DailyProblem {
+  id: string;
+  date: string;
+  name: string;
+  link: string;
+  platform: "LeetCode" | "Codeforces" | "CSES" | "GFG";
+  topic: string;
+  difficulty: "Easy" | "Medium" | "Hard";
+  notes?: string;
+}
+
+export const INITIAL_DSA_PROBLEMS: DailyProblem[] = [
+  {
+    id: "prob-1",
+    date: "2026-10-06",
+    name: "Course Schedule II",
+    link: "https://leetcode.com/problems/course-schedule-ii/",
+    platform: "LeetCode",
+    topic: "Graphs & Topological Sort",
+    difficulty: "Medium",
+    notes: "Kahn's Algorithm (in-degree array + queue) to detect cycle and build linear ordering.",
+  },
+  {
+    id: "prob-2",
+    date: "2026-10-05",
+    name: "E. Building an Aquarium",
+    link: "https://codeforces.com/contest/1873/problem/E",
+    platform: "Codeforces",
+    topic: "Binary Search on Answer",
+    difficulty: "Medium",
+    notes: "Binary search on water height h in [1, 2e9]. Checked total water volume in O(N).",
+  },
+  {
+    id: "prob-3",
+    date: "2026-10-04",
+    name: "Design In-Memory File System",
+    link: "https://leetcode.com/problems/design-in-memory-file-system/",
+    platform: "LeetCode",
+    topic: "Trie & System Design",
+    difficulty: "Hard",
+    notes: "File system hierarchy represented as Trie with Directory/File nodes and TreeMap for sorting.",
+  },
+  {
+    id: "prob-4",
+    date: "2026-10-03",
+    name: "C. Yarik and Array",
+    link: "https://codeforces.com/contest/1899/problem/C",
+    platform: "Codeforces",
+    topic: "Dynamic Programming / Kadane",
+    difficulty: "Medium",
+    notes: "Modified Kadane's algorithm checking parity alternations between adjacent elements.",
+  },
+  {
+    id: "prob-5",
+    date: "2026-10-02",
+    name: "LRU Cache",
+    link: "https://leetcode.com/problems/lru-cache/",
+    platform: "LeetCode",
+    topic: "Hash Table & Doubly Linked List",
+    difficulty: "Medium",
+    notes: "O(1) get and put using HashMap mapped to nodes in custom doubly-linked list with dummy head/tail.",
+  },
+  {
+    id: "prob-6",
+    date: "2026-10-01",
+    name: "C. Quests",
+    link: "https://codeforces.com/contest/1914/problem/C",
+    platform: "Codeforces",
+    topic: "Greedy & Prefix Sums",
+    difficulty: "Medium",
+    notes: "Prefix sums of first attempts combined with maximum repeatable bonus quest across prefix.",
+  },
+  {
+    id: "prob-7",
+    date: "2026-09-30",
+    name: "Lowest Common Ancestor of a Binary Tree",
+    link: "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/",
+    platform: "LeetCode",
+    topic: "Trees & DFS",
+    difficulty: "Medium",
+    notes: "Post-order recursive traversal returning node when left and right subtrees both yield match.",
+  },
+  {
+    id: "prob-8",
+    date: "2026-09-29",
+    name: "Network Delay Time",
+    link: "https://leetcode.com/problems/network-delay-time/",
+    platform: "LeetCode",
+    topic: "Dijkstra's Algorithm",
+    difficulty: "Medium",
+    notes: "Single source shortest path using PriorityQueue min-heap and adjacency list.",
+  },
+  {
+    id: "prob-9",
+    date: "2026-09-28",
+    name: "B. Erase First or Second Letter",
+    link: "https://codeforces.com/contest/1917/problem/B",
+    platform: "Codeforces",
+    topic: "Strings & Combinatorics",
+    difficulty: "Easy",
+    notes: "Count distinct prefixes achievable by tracking seen characters set.",
+  },
+  {
+    id: "prob-10",
+    date: "2026-09-27",
+    name: "Trapping Rain Water",
+    link: "https://leetcode.com/problems/trapping-rain-water/",
+    platform: "LeetCode",
+    topic: "Two Pointers",
+    difficulty: "Hard",
+    notes: "Two-pointer approach maintaining leftMax and rightMax with O(1) space complexity.",
+  },
+  {
+    id: "prob-11",
+    date: "2026-09-26",
+    name: "Longest Increasing Subsequence",
+    link: "https://leetcode.com/problems/longest-increasing-subsequence/",
+    platform: "LeetCode",
+    topic: "DP & Binary Search (Patience Sorting)",
+    difficulty: "Medium",
+    notes: "O(N log N) solution using tails array and binary search (Arrays.binarySearch).",
+  },
+  {
+    id: "prob-12",
+    date: "2026-09-25",
+    name: "Word Ladder",
+    link: "https://leetcode.com/problems/word-ladder/",
+    platform: "LeetCode",
+    topic: "Breadth-First Search",
+    difficulty: "Hard",
+    notes: "Bidirectional BFS level-by-level exploring one-letter character mutations.",
+  },
+];
+
+export const TOPIC_OPTIONS = [
+  "All Topics",
+  "Dynamic Programming",
+  "Graphs & Topological Sort",
+  "Trees & DFS",
+  "Binary Search on Answer",
+  "Hash Table & Doubly Linked List",
+  "Two Pointers",
+  "Greedy & Prefix Sums",
+  "Trie & System Design",
+  "Dijkstra's Algorithm",
+  "Breadth-First Search",
+  "Strings & Combinatorics",
+];
